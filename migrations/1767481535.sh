@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# Create a variable for interactive mode
+INTERACTIVE_MODE=${INTERACTIVE_MODE:-true}
+
 echo "Migrate from Omakub Menu Topbar Extension to Icon Launcher Extension"
 
 # Update branding
