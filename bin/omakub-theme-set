@@ -50,6 +50,7 @@ omakub-theme-bg-next
 omakub-restart-btop
 omakub-restart-terminal
 omakub-restart-zellij
+omakub-restart-opencode
 
 # Change app specific themes
 omakub-theme-set-gnome
