@@ -336,8 +336,11 @@ show_install_terminal_menu() {
 }
 
 show_install_ai_menu() {
-  case $(menu "Install" "󱚤  Ollama" "--width 250 --height 80") in
+  case $(menu "Install" "󱚤  Claude Code\n󱚤  Copilot CLI\n󱚤  Ollama\n󱚤  OpenCode" "--width 250 --height 210") in
+  *Claude*) install_app "claude-code" ;;
+  *Copilot*) install_app "github-copilot-cli" ;;
   *Ollama*) install_app "ollama" ;;
+  *OpenCode*) install_app "opencode" ;;
   *) show_install_menu ;;
   esac
 }
