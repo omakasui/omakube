@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# Create a variable for interactive mode
+INTERACTIVE_MODE=${INTERACTIVE_MODE:-true}
+
 # Update Gum
 echo -e "\e[32m\nUpdating gum...\e[0m"
 echo
@@ -135,14 +138,16 @@ source ~/.local/share/omakub/install/login/plymouth.sh
 source ~/.local/share/omakub/install/login/gdm3.sh
 source ~/.local/share/omakub/install/login/alt-bootloaders.sh
 
-# Warning on x11 sessions to use Wayland instead
-if [ "$XDG_SESSION_TYPE" = "x11" ]; then
-  echo -e "\e[33m\nWarning: You are currently using an X11 session. It is recommended to switch to a Wayland session for the best experience with Omakub.\e[0m"
-  echo -e "\e[33mYou can select the Wayland session at the login screen by clicking on the gear icon and choosing 'Ubuntu (Wayland)'.\e[0m"
-  echo
-fi
+if [ "$INTERACTIVE_MODE" = true ]; then
+  # Warning on x11 sessions to use Wayland instead
+  if [ "$XDG_SESSION_TYPE" = "x11" ]; then
+    echo -e "\e[33m\nWarning: You are currently using an X11 session. It is recommended to switch to a Wayland session for the best experience with Omakub.\e[0m"
+    echo -e "\e[33mYou can select the Wayland session at the login screen by clicking on the gear icon and choosing 'Ubuntu (Wayland)'.\e[0m"
+    echo
+  fi
 
-# Request restart
-echo -e "\e[32m\nMigration completed! Please restart your computer to apply all changes.\e[0m"
-echo
-gum confirm "Restart now?" && { sudo reboot now; } || { echo "Please remember to restart later."; exit 0; }
+  # Request restart
+  echo -e "\e[32m\nMigration completed! Please restart your computer to apply all changes.\e[0m"
+  echo
+  gum confirm "Restart now?" && { sudo reboot now; } || { echo "Please remember to restart later."; exit 0; }
+fi
