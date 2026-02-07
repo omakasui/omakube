@@ -67,10 +67,10 @@ if command -v snap &> /dev/null; then
 fi
 
 # Configs
-echo -e "\e[32m\nApplying new Omakub configurations...\e[0m"
+echo -e "\e[32m\nApplying new Omabuntu configurations...\e[0m"
 echo
 
-# Configure the bash shell using Omakub defaults
+# Configure the bash shell using Omabuntu defaults
 mv ~/.bashrc ~/.bashrc.bak
 cp ~/.local/share/omakub/default/bashrc ~/.bashrc
 # Remove .inputrc if it exists
@@ -100,7 +100,7 @@ rm -rf ~/.local/share/applications/Basecamp.desktop
 rm -rf ~/.local/share/applications/Docker.desktop
 rm -rf ~/.local/share/applications/HEY.desktop
 rm -rf ~/.local/share/applications/Neovim.desktop
-rm -rf ~/.local/share/applications/Omakub.desktop
+rm -rf ~/.local/share/applications/Omabuntu.desktop
 rm -rf ~/.local/share/applications/WhatsApp.desktop
 rm -rf ~/.local/share/applications/icons
 
@@ -137,7 +137,7 @@ source ~/.local/share/omakub/install/login/alt-bootloaders.sh
 
 # Warning on x11 sessions to use Wayland instead
 if [ "$XDG_SESSION_TYPE" = "x11" ]; then
-  echo -e "\e[33m\nWarning: You are currently using an X11 session. It is recommended to switch to a Wayland session for the best experience with Omakub.\e[0m"
+  echo -e "\e[33m\nWarning: You are currently using an X11 session. It is recommended to switch to a Wayland session for the best experience with Omabuntu.\e[0m"
   echo -e "\e[33mYou can select the Wayland session at the login screen by clicking on the gear icon and choosing 'Ubuntu (Wayland)'.\e[0m"
   echo
 fi

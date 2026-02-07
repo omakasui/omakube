@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# omakub-env-set: Set an environment variable for Omakub in bashrc.
+# omakub-env-set: Set an environment variable for Omabuntu in bashrc.
 # Usage: omakub-env-set <VAR_NAME> <VAR_VALUE>
 
 

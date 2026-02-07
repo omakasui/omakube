@@ -1,5 +1,5 @@
 ---
-name: Omakub
+name: omabuntu
 description: >
   REQUIRED for ANY changes to Ubuntu desktop, GNOME settings, or system config.
   Use when editing ~/.config/alacritty/, ~/.config/kitty/, ~/.config/wofi/,
@@ -8,9 +8,9 @@ description: >
   workspace configuration, display config, or any omakub-* commands.
 ---
 
-# Omakub Skill
+# Omabuntu Skill
 
-Manage [Omakub](https://omakub.org/) Linux systems - an opinionated Ubuntu 24.04+ development environment.
+Manage [Omabuntu](https://omabuntu.omakasui.org/) Linux systems - an opinionated Ubuntu 24.04+ development environment.
 
 ## When This Skill MUST Be Used
 
@@ -31,7 +31,7 @@ Manage [Omakub](https://omakub.org/) Linux systems - an opinionated Ubuntu 24.04
 
 **NEVER modify anything in `~/.local/share/omakub/`** - but READING is safe and encouraged.
 
-This directory contains Omakub's source files managed by git. Any changes will be:
+This directory contains Omabuntu's source files managed by git. Any changes will be:
 
 - Lost on next `omakub-update`
 - Cause conflicts with upstream
@@ -63,7 +63,7 @@ This directory contains Omakub's source files managed by git. Any changes will b
 
 ## System Architecture
 
-Omakub is built on:
+Omabuntu is built on:
 
 | Component           | Purpose              | Config Location            |
 | ------------------- | -------------------- | -------------------------- |
@@ -77,7 +77,7 @@ Omakub is built on:
 
 ## Command Discovery
 
-Omakub provides ~90 commands following `omakub-<category>-<action>` pattern.
+Omabuntu provides ~90 commands following `omakub-<category>-<action>` pattern.
 
 ```bash
 # List all omakub commands
@@ -129,7 +129,7 @@ gsettings set org.gnome.desktop.wm.keybindings close "['<Super>w']"
 - Extensions: `org.gnome.shell.extensions.*`
 - Keybindings: `org.gnome.desktop.wm.keybindings`, `org.gnome.settings-daemon.plugins.media-keys`
 
-**Omakub includes these GNOME extensions:**
+**Omabuntu includes these GNOME extensions:**
 
 - Tactile (window tiling)
 - Just Perfection (UI tweaks)
@@ -274,7 +274,7 @@ omakub-keybinding-remove "Open Terminal"
 gsettings get org.gnome.settings-daemon.plugins.media-keys custom-keybindings
 ```
 
-**Default Omakub keybindings:**
+**Default Omabuntu keybindings:**
 
 - `Super+W` - Close window
 - `Super+Up` - Maximize window
@@ -328,8 +328,8 @@ gsettings set org.gnome.settings-daemon.plugins.color night-light-temperature 40
 ### System
 
 ```bash
-omakub-update                  # Full system update (Ubuntu + Omakub)
-omakub-state                   # Show Omakub state/version
+omakub-update                  # Full system update (Ubuntu + Omabuntu)
+omakub-state                   # Show Omabuntu state/version
 omakub-cmd-shutdown            # Shutdown
 omakub-cmd-reboot              # Reboot
 omakub-cmd-logout              # Logout
@@ -368,7 +368,7 @@ When user requests system changes:
 
 ## Development (AI Agents)
 
-When contributing to Omakub itself (e.g., fixing bugs, adding features), migrations are used to apply changes to existing installations.
+When contributing to Omabuntu itself (e.g., fixing bugs, adding features), migrations are used to apply changes to existing installations.
 
 ### Creating Migrations
 

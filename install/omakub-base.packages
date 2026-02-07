@@ -1,4 +1,4 @@
-# Omakube core package list installed via install/packaging/base.sh
+# Omabuntu core package list installed via install/packaging/base.sh
 
 apache2-utils
 autoconf

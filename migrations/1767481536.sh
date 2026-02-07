@@ -2,7 +2,7 @@
 
 echo "Migrate to new theme setup"
 
-# Move user-added backgrounds from Omakub theme folders to user config
+# Move user-added backgrounds from Omabuntu theme folders to user config
 OMAKUB_DIR="$HOME/.local/share/omakub"
 USER_BACKGROUNDS_DIR="$HOME/.config/omakub/backgrounds"
 

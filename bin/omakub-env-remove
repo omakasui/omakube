@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# omakub-env-remove: Remove an environment variable for Omakub in bashrc.
+# omakub-env-remove: Remove an environment variable for Omabuntu in bashrc.
 # Usage: omakub-env-remove <VAR_NAME>
 
 if (($# != 1)); then

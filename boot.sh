@@ -16,10 +16,10 @@ sudo apt-get update >/dev/null
 sudo apt-get install -y git >/dev/null
 
 # Use custom repo if specified, otherwise use default
-OMAKUB_REPO="${OMAKUB_REPO:-Kasui92/omakube}"
+OMAKUB_REPO="${OMAKUB_REPO:-omakasui/omabuntu}"
 
 # Use custom brand if specified, otherwise use default
-OMAKUB_BRAND="${OMAKUB_BRAND:-Omakube}"
+OMAKUB_BRAND="${OMAKUB_BRAND:-Omabuntu}"
 
 echo -e "\nCloning $OMAKUB_BRAND from: https://github.com/${OMAKUB_REPO}.git"
 rm -rf ~/.local/share/omakub

@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Sync Omakub theme to VS Code, VSCodium, and Cursor
+# Sync Omabuntu theme to VS Code, VSCodium, and Cursor
 
 VS_CODE_THEME="$HOME/.config/omakub/current/theme/vscode.json"
 

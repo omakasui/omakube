@@ -1,7 +1,7 @@
 #!/bin/bash
 
-# Creates a new Omakube migration named after the unix timestamp of the last commit.
-# Only intended for Omakube developers.
+# Creates a new Omabuntu migration named after the unix timestamp of the last commit.
+# Only intended for Omabuntu developers.
 
 cd ~/.local/share/omakub
 migration_file="$HOME/.local/share/omakub/migrations/$(git log -1 --format=%cd --date=unix).sh"

@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# omakub-theme-install: Install a new theme from a git repo for Omakub/Omakasui.
+# omakub-theme-install: Install a new theme from a git repo for Omabuntu/Omakasui.
 # Usage: omakub-theme-install <git-repo-url>
 
 if [ -z "$1" ]; then

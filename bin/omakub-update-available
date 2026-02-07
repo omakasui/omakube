@@ -15,9 +15,9 @@ if [[ -z "$current_tag" ]]; then
 fi
 
 if [[ "$current_tag" != "$latest_tag" ]]; then
-  echo "Omakub update available ($latest_tag)"
+  echo "Omabuntu update available ($latest_tag)"
   exit 0
 else
-  echo "Omakub is up to date ($current_tag)"
+  echo "Omabuntu is up to date ($current_tag)"
   exit 1
 fi

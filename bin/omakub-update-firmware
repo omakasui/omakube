@@ -8,5 +8,5 @@ if omakub-cmd-missing fwupdmgr; then
   omakub-pkg-add fwupd
 fi
 
-fwupdmgr refresh
+fwupdmgr refresh --force
 sudo fwupdmgr update

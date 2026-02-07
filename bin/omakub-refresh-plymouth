@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Overwrite the user config for the Plymouth drive decryption and boot sequence with the Omakub default and rebuild it.
+# Overwrite the user config for the Plymouth drive decryption and boot sequence with the Omabuntu default and rebuild it.
 
 sudo cp ~/.local/share/omakub/default/plymouth/* /usr/share/plymouth/themes/omakub/
 sudo update-alternatives --install /usr/share/plymouth/themes/default.plymouth default.plymouth /usr/share/plymouth/themes/omakub/omakub.plymouth 100

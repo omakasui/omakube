@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Set GNOME theme according to Omakub current theme.
+# Set GNOME theme according to Omabuntu current theme.
 
 # Change gnome modes
 GNOME_THEME=~/.config/omakub/current/theme/gnome.theme

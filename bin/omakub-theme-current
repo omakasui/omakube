@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Display the name of the current Omakub theme in a user-friendly format.
+# Display the name of the current Omabuntu theme in a user-friendly format.
 
 THEME_NAME_PATH="$HOME/.config/omakub/current/theme.name"
 

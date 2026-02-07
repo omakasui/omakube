@@ -1,5 +1,5 @@
 #!/bin/bash
 
-# Overwrite the user config for fastfetch with the Omakub default.
+# Overwrite the user config for fastfetch with the Omabuntu default.
 
 omakub-refresh-config fastfetch/config.jsonc

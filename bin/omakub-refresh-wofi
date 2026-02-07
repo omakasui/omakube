@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Overwrite the user config for wofi with the Omakub default.
+# Overwrite the user config for wofi with the Omabuntu default.
 
 omakub-refresh-config wofi/config
 omakub-refresh-config wofi/style.css

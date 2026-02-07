@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Overwrite the user config for themes with the Omakub defaults.
+# Overwrite the user config for themes with the Omabuntu defaults.
 
 # Add missing theme links
 for f in ~/.local/share/omakub/themes/*; do

@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Install one or more Omakub applications.
+# Install one or more Omabuntu applications.
 
 APP_DIR="$HOME/.local/share/omakub/applications/install"
 

@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Launch a floating terminal with the Omakub logo presentation, then execute the command passed in, and finally end with the omakub-show-done presentation.
+# Launch a floating terminal with the Omabuntu logo presentation, then execute the command passed in, and finally end with the omakub-show-done presentation.
 # Used by actions such as Update System.
 
 cmd="$*"

@@ -1,5 +1,5 @@
 #!/bin/bash
 
-# Reload btop configuration (used by the Omakub theme switching).
+# Reload btop configuration (used by the Omabuntu theme switching).
 
 pkill -SIGUSR2 btop

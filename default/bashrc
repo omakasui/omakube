@@ -1,4 +1,4 @@
-# All the default Omakub aliases and functions
+# All the default Omabuntu aliases and functions
 # (don't mess with these directly, just overwrite them here!)
 source ~/.local/share/omakub/default/bash/rc
 

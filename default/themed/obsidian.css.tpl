@@ -1,4 +1,4 @@
-/* Omakub Theme for Obsidian */
+/* Omabuntu Theme for Obsidian */
 
 .theme-dark, .theme-light {
   /* Core colors */

@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Sync Omakub theme to all Obsidian vaults
+# Sync Omabuntu theme to all Obsidian vaults
 
 CURRENT_THEME_DIR="$HOME/.config/omakub/current/theme"
 
@@ -9,17 +9,17 @@ CURRENT_THEME_DIR="$HOME/.config/omakub/current/theme"
 jq -r '.vaults | values[].path' ~/.config/obsidian/obsidian.json 2>/dev/null | while read -r vault_path; do
   [ -d "$vault_path/.obsidian" ] || continue
 
-  theme_dir="$vault_path/.obsidian/themes/Omakub"
+  theme_dir="$vault_path/.obsidian/themes/Omabuntu"
   mkdir -p "$theme_dir"
 
   [ -f "$theme_dir/manifest.json" ] || cat >"$theme_dir/manifest.json" <<'EOF'
 {
-  "name": "Omakub",
+  "name": "Omabuntu",
   "version": "1.0.0",
   "minAppVersion": "0.16.0",
-  "description": "Automatically syncs with your current Omakub system theme colors and fonts",
-  "author": "Omakub",
-  "authorUrl": "https://omakub.org"
+  "description": "Automatically syncs with your current Omabuntu system theme colors and fonts",
+  "author": "Omabuntu",
+  "authorUrl": "https://omabuntu.omakasui.org"
 }
 EOF
 

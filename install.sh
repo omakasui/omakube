@@ -3,7 +3,7 @@
 # Exit immediately if a command exits with a non-zero status
 set -eEo pipefail
 
-# Define Omakub locations
+# Define Omabuntu locations
 export OMAKUB_PATH="$HOME/.local/share/omakub"
 export OMAKUB_INSTALL="$OMAKUB_PATH/install"
 export OMAKUB_INSTALL_LOG_FILE="/var/log/omakub-install.log"

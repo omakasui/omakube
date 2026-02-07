@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Update all installed Omakub themes by pulling the latest changes from their git repositories.
+# Update all installed Omabuntu themes by pulling the latest changes from their git repositories.
 
 omakub-refresh-theme
 

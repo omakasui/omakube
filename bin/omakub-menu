@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Launch the Omakub Menu or takes a parameter to jump straight to a submenu.
+# Launch the Omabuntu Menu or takes a parameter to jump straight to a submenu.
 
 export PATH="$HOME/.local/share/omakub/bin:$PATH"
 
@@ -68,9 +68,9 @@ remove() {
 }
 
 show_learn_menu() {
-  case $(menu "Learn" "  Keybindings\n  Omakub\n  Ubuntu\n  Neovim\n  Zellij\n󱆃  Bash" "--width 250 --height 280") in
-  *Keybindings*) omakub-launch-webapp "https://learn.omacom.io/1/read/29/hotkeys" "Omakub Keybindings" ;;
-  *Omakub*) omakub-launch-webapp "https://learn.omacom.io/1/read#leaf_40" "Omakub" ;;
+  case $(menu "Learn" "  Keybindings\n  Omabuntu\n  Ubuntu\n  Neovim\n  Zellij\n󱆃  Bash" "--width 250 --height 280") in
+  *Keybindings*) omakub-launch-webapp "https://learn.omacom.io/1/read/29/hotkeys" "Omabuntu Keybindings" ;;
+  *Omabuntu*) omakub-launch-webapp "https://learn.omacom.io/1/read#leaf_40" "Omabuntu" ;;
   *Ubuntu*) omakub-launch-webapp "https://help.ubuntu.com/" "Ubuntu" ;;
   *Bash*) omakub-launch-webapp "https://devhints.io/bash" "Bash" ;;
   *Neovim*) omakub-launch-webapp "https://www.lazyvim.org/keymaps" "Neovim" ;;
@@ -355,12 +355,13 @@ show_install_gaming_menu() {
 }
 
 show_remove_menu() {
-  case $(menu "Remove" "  Web App\n  TUI\n󰀻  App\n󰸌  Theme\n󰵮  Development" "--width 250 --height 250") in
+  case $(menu "Remove" "  Web App\n  TUI\n󰀻  App\n󰸌  Theme\n󰵮  Development\n󰏓  Preinstalls" "--width 250 --height 280") in
   *Web*) present_terminal omakub-webapp-remove ;;
   *TUI*) present_terminal omakub-tui-remove ;;
   *App*) present_terminal omakub-app-remove ;;
   *Theme*) present_terminal omakub-theme-remove ;;
   *Development*) show_remove_development_menu ;;
+  *Preinstalls*) present_terminal omakub-remove-all ;;
   *) show_main_menu ;;
   esac
 }

@@ -12,7 +12,7 @@ if ! grep -q "plymouth" /etc/initramfs-tools/modules 2>/dev/null; then
   sudo update-initramfs -u
 fi
 
-# Install and configure Omakub Plymouth theme
+# Install and configure Omabuntu Plymouth theme
 THEME_SOURCE_DIR="$(dirname "$(dirname "$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)")")/default/plymouth"
 
 if [ -d "$THEME_SOURCE_DIR" ]; then

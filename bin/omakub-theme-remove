@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# omakub-theme-remove: Remove a theme from Omakub by name
+# omakub-theme-remove: Remove a theme from Omabuntu by name
 # Usage: omakub-theme-remove <theme-name>
 
 if [ -z "$1" ]; then

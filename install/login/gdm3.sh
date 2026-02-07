@@ -14,7 +14,7 @@ sudo systemctl enable gdm3
 OMAKUB_GDM_LOGO="$HOME/.local/share/omakub/default/gdm/logo.png"
 OMAKUB_GDM_BACKGROUND="$HOME/.local/share/omakub/default/gdm/background.png"
 
-# Copy Omakub logo and background to system directory
+# Copy Omabuntu logo and background to system directory
 sudo mkdir -p /usr/share/pixmaps/omakub/
 if [ -f "$OMAKUB_GDM_LOGO" ]; then
   sudo cp "$OMAKUB_GDM_LOGO" /usr/share/pixmaps/omakub/gdm-logo.png
@@ -23,7 +23,7 @@ if [ -f "$OMAKUB_GDM_BACKGROUND" ]; then
   sudo cp "$OMAKUB_GDM_BACKGROUND" /usr/share/pixmaps/omakub/gdm-background.png
 fi
 
-# Copy Omakub GDM greeter configuration
+# Copy Omabuntu GDM greeter configuration
 OMAKUB_GDM_CONFIG="$HOME/.local/share/omakub/default/gdm/greeter.dconf-defaults"
 if [ -f "$OMAKUB_GDM_CONFIG" ]; then
   sudo cp "$OMAKUB_GDM_CONFIG" /etc/gdm3/greeter.dconf-defaults

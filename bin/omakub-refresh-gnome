@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Overwrite the user config for the Plymouth drive decryption and boot sequence with the Omakub default and rebuild it
+# Overwrite the user config for the Plymouth drive decryption and boot sequence with the Omabuntu default and rebuild it
 
 # Backup current dconf (with timestamp) to avoid clobbering (Ex: omakub.dconf.bak.1753817951)
 dconf dump / > "$HOME/gnome.dconf.bak.$(date +%s)"
@@ -12,4 +12,4 @@ source ~/.local/share/omakub/install/config/gnome/extensions.sh
 source ~/.local/share/omakub/install/config/gnome/hotkeys.sh
 source ~/.local/share/omakub/install/config/gnome/settings.sh
 
-echo -e "\e[31mRefreshed GNOME settings from Omakub defaults. Saved backup as gnome.dconf.bak.*\e[0m"
+echo -e "\e[31mRefreshed GNOME settings from Omabuntu defaults. Saved backup as gnome.dconf.bak.*\e[0m"

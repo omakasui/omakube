@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Remove one or more Omakub applications.
+# Remove one or more Omabuntu applications.
 
 APP_DIR="$HOME/.local/share/omakub/applications/remove"
 
