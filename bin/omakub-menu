@@ -355,12 +355,13 @@ show_install_gaming_menu() {
 }
 
 show_remove_menu() {
-  case $(menu "Remove" "  Web App\n  TUI\n󰀻  App\n󰸌  Theme\n󰵮  Development" "--width 250 --height 250") in
+  case $(menu "Remove" "  Web App\n  TUI\n󰀻  App\n󰸌  Theme\n󰵮  Development\n󰏓  Preinstalls" "--width 250 --height 280") in
   *Web*) present_terminal omakub-webapp-remove ;;
   *TUI*) present_terminal omakub-tui-remove ;;
   *App*) present_terminal omakub-app-remove ;;
   *Theme*) present_terminal omakub-theme-remove ;;
   *Development*) show_remove_development_menu ;;
+  *Preinstalls*) present_terminal omakub-remove-all ;;
   *) show_main_menu ;;
   esac
 }
