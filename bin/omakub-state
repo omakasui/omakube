@@ -1,6 +1,8 @@
 #!/bin/bash
 
-# Manage Omabuntu state files in the user's local state directory.
+# Manage persistent state files for Omabuntu toggles and settings.
+# Usage: omakub-state <set|clear> <state-name-or-pattern>
+# Used to track whether features like suspend, idle lock, etc are enabled or disabled.
 
 STATE_DIR="$HOME/.local/state/omakub"
 mkdir -p "$STATE_DIR"
