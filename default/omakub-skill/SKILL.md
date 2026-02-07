@@ -1,5 +1,5 @@
 ---
-name: Omabuntu
+name: omabuntu
 description: >
   REQUIRED for ANY changes to Ubuntu desktop, GNOME settings, or system config.
   Use when editing ~/.config/alacritty/, ~/.config/kitty/, ~/.config/wofi/,
