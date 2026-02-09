@@ -90,6 +90,7 @@ run_logged() {
     echo $? > "$temp_exit_file"
   ) &
   local bg_pid=$!
+  export CURRENT_BG_PID=$bg_pid
 
   # Get timeout from environment or use default (10 minutes)
   # Each script can override this by exporting OMAKUB_SCRIPT_TIMEOUT before calling run_logged
@@ -113,6 +114,7 @@ run_logged() {
     echo "[$(date '+%Y-%m-%d %H:%M:%S')] Timeout: $script (exceeded ${timeout}s)" >>"$OMAKUB_INSTALL_LOG_FILE"
     rm -f "$temp_exit_file"
     unset CURRENT_SCRIPT
+    unset CURRENT_BG_PID
     unset OMAKUB_SCRIPT_TIMEOUT
     return 124
   fi
@@ -130,11 +132,13 @@ run_logged() {
     printf "${ANSI_CARRIAGE_RETURN}${ANSI_CLEAR_LINE}${PADDING_LEFT_SPACES}${ANSI_GREEN}✓${ANSI_RESET}  Completed $script_name\n"
     echo "[$(date '+%Y-%m-%d %H:%M:%S')] Completed: $script" >>"$OMAKUB_INSTALL_LOG_FILE"
     unset CURRENT_SCRIPT
+    unset CURRENT_BG_PID
     return 0
   else
     # Failure - replace the spinner line with error status
     printf "${ANSI_CARRIAGE_RETURN}${ANSI_CLEAR_LINE}${PADDING_LEFT_SPACES}${ANSI_RED}✗${ANSI_RESET}  Failed $script_name\n"
     echo "[$(date '+%Y-%m-%d %H:%M:%S')] Failed: $script (exit code: $exit_code)" >>"$OMAKUB_INSTALL_LOG_FILE"
+    unset CURRENT_BG_PID
     return $exit_code
   fi
 }
