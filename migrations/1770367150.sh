@@ -1,3 +1,4 @@
+#!/bin/bash
 
 echo "Add Super+Shift+Return binding for browser"
 
