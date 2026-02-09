@@ -63,13 +63,25 @@ catch_errors() {
       # Reset error handling state
       ERROR_HANDLING=false
 
-      # Disable terminal queries and clean state thoroughly
-      printf '\033]11;?\007' >/dev/null 2>&1 || true  # Clear any pending color queries
-      stty sane 2>/dev/null || true
-      reset 2>&1 | cat  # Capture escape sequences
+      # Stop sudo keep-alive if running
+      stop_sudo_keepalive 2>/dev/null || true
 
-      # Clear screen properly
+      # Drain any pending terminal input (escape sequence responses from gum)
+      # This prevents leaked responses like ^[]11;rgb:... from corrupting the next session
+      while read -r -t 0.1 -n 1 2>/dev/null; do :; done
+
+      # Reset terminal to a sane state
+      stty sane 2>/dev/null || true
+
+      # Use tput reset which properly reinitializes the terminal
+      # without sending queries that produce more responses
+      tput reset 2>/dev/null || true
+
+      # Clear screen
       printf "\033[H\033[2J"
+
+      # Small delay to let terminal settle
+      sleep 0.2
 
       # Re-execute installation script
       exec bash ~/.local/share/omakub/install.sh
@@ -92,6 +104,9 @@ catch_errors() {
 # Exit handler - ensures cleanup happens on any exit
 exit_handler() {
   local exit_code=$?
+
+  # Always stop sudo keep-alive on exit
+  stop_sudo_keepalive 2>/dev/null || true
 
   # Only run if we're exiting with an error and haven't already handled it
   if [[ $exit_code -ne 0 && $ERROR_HANDLING != true ]]; then

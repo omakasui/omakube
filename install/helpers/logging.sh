@@ -1,12 +1,38 @@
+# Keep sudo credentials fresh during long installations.
+start_sudo_keepalive() {
+  sudo -v
+
+  # Background loop: refresh every 60 seconds until killed
+  (
+    while true; do
+      sleep 60
+      sudo -n -v 2>/dev/null || true
+    done
+  ) &
+  export SUDO_KEEPALIVE_PID=$!
+}
+
+stop_sudo_keepalive() {
+  if [[ -n ${SUDO_KEEPALIVE_PID:-} ]]; then
+    kill "$SUDO_KEEPALIVE_PID" 2>/dev/null || true
+    wait "$SUDO_KEEPALIVE_PID" 2>/dev/null || true
+    unset SUDO_KEEPALIVE_PID
+  fi
+}
+
 start_install_log() {
   sudo touch "$OMAKUB_INSTALL_LOG_FILE"
   sudo chmod 666 "$OMAKUB_INSTALL_LOG_FILE"
 
   export OMAKUB_START_TIME=$(date '+%Y-%m-%d %H:%M:%S')
   echo "=== $OMAKUB_BRAND Installation Started: $OMAKUB_START_TIME ===" >>"$OMAKUB_INSTALL_LOG_FILE"
+
+  start_sudo_keepalive
 }
 
 stop_install_log() {
+  stop_sudo_keepalive
+
   if [[ -n ${OMAKUB_INSTALL_LOG_FILE:-} ]]; then
     OMAKUB_END_TIME=$(date '+%Y-%m-%d %H:%M:%S')
     echo "=== $OMAKUB_BRAND Installation Completed: $OMAKUB_END_TIME ===" >>"$OMAKUB_INSTALL_LOG_FILE"
