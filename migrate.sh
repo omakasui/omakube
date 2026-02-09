@@ -18,9 +18,9 @@ export OMAKUB_INSTALL="$OMAKUB_PATH/install"
 export OMAKUB_INSTALL_LOG_FILE="/var/log/omakub-install.log"
 export PATH="$OMAKUB_PATH/bin:$PATH"
 
-# Check Omabuntu installation
+# Check Omakub installation
 if [[ ! -d "$OMAKUB_PATH" ]]; then
-    echo "Error: Omabuntu not found in $OMAKUB_PATH"
+    echo "Error: Omakub not found in $OMAKUB_PATH"
     exit 1
 fi
 
