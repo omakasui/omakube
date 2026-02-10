@@ -1,4 +1,3 @@
-#!/bin/bash
 
 echo "Disabling Night Light by default and adding manual schedule settings..."
 

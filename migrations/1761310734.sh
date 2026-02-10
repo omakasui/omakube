@@ -1,4 +1,3 @@
-#!/bin/bash
 
 echo "Ensure interactive shell check is at the top of .bashrc"
 

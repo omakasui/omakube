@@ -1,4 +1,3 @@
-#!/bin/bash
 
 echo "Migrate from Omabuntu Menu Topbar Extension to Icon Launcher Extension"
 

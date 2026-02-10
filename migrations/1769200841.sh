@@ -1,4 +1,3 @@
-#!/bin/bash
 
 echo "Fix TUI launchers to use xdg-terminal-exec"
 

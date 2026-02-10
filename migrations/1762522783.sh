@@ -1,4 +1,3 @@
-#!/bin/bash
 
 echo "Ensure node is available via mise (for treesitter cli)"
 

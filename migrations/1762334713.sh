@@ -1,4 +1,3 @@
-#!/bin/bash
 
 echo "Setting up xdg-terminal-exec for gtk-launch terminal support"
 

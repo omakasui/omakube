@@ -1,4 +1,3 @@
-#!/bin/bash
 
 echo "Set nvim as default via xdg-mime"
 

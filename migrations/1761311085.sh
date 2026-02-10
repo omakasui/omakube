@@ -1,4 +1,3 @@
-#!/bin/bash
 
 echo "Remove interactive shell check from .bashrc (breaks hotkey commands)"
 

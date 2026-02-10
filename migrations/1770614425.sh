@@ -1,4 +1,3 @@
-#! /bin/bash
 
 echo "Moving from Omakube to Omabuntu"
 

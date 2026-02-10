@@ -1,4 +1,3 @@
-#!/bin/bash
 
 echo "Open directories in file manager using the shell open command"
 

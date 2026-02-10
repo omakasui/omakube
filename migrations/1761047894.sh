@@ -1,4 +1,3 @@
-#!/bin/bash
 
 echo "Copy configs for kitty so they're available as alternative terminal options"
 

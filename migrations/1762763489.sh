@@ -1,4 +1,3 @@
-#!/bin/bash
 
 echo 'Disabling hotkeys in Dash to Dock extension...'
 
