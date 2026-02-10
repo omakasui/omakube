@@ -34,3 +34,20 @@ clear_logo() {
   printf "\033[H\033[2J"
   gum style --foreground 2 --padding "1 0 0 $PADDING_LEFT" "$(<"$LOGO_PATH")"
 }
+
+script_headline() {
+  local title="$1"
+  gum style --foreground 3 --padding "1 0 0 $PADDING_LEFT" "$title"
+  echo
+}
+
+step_headline() {
+  clear_logo
+  gum style --foreground 3 --padding "1 0 0 $PADDING_LEFT" "Installing $OMAKUB_BRAND..."
+  gum style --foreground 4 "Logging to: $OMAKUB_INSTALL_LOG_FILE"
+  echo
+
+  if [[ -n $1 ]]; then
+    script_headline "$1"
+  fi
+}

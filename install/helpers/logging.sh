@@ -42,6 +42,8 @@ run_logged() {
 
   echo "[$(date '+%Y-%m-%d %H:%M:%S')] Starting: $script_name" | tee -a "$OMAKUB_INSTALL_LOG_FILE"
 
+  step_headline "Running: $script_name"
+
   # Run the script — output goes to both terminal and log via tee.
   # pipefail ensures the exit code from bash propagates through the pipe.
   bash "$script" 2>&1 | tee -a "$OMAKUB_INSTALL_LOG_FILE"
