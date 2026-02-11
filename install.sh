@@ -6,7 +6,7 @@ set -eEo pipefail
 # Define Omabuntu locations
 export OMAKUB_PATH="$HOME/.local/share/omakub"
 export OMAKUB_INSTALL="$OMAKUB_PATH/install"
-export OMAKUB_INSTALL_LOG_FILE="/var/log/omakub-install.log"
+export OMAKUB_INSTALL_LOG_FILE="/var/log/${OMAKUB_BRAND:-omakub}-install.log"
 export PATH="$OMAKUB_PATH/bin:$PATH"
 
 # Install
