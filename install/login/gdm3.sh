@@ -7,7 +7,7 @@ sudo sed -i 's/^#WaylandEnable=false/WaylandEnable=true/' /etc/gdm3/custom.conf
 sudo systemctl enable gdm3
 
 # ==============================================================================
-# GDM OMAKUB LOGO SETUP
+# GDM OMABUNTU LOGO SETUP
 # ==============================================================================
 
 # Get the directory where this script is located
