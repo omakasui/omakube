@@ -32,7 +32,7 @@ menu() {
   fi
 
   # Show Wofi menu (with markup support)
-  selection=$(echo -e "$options" | omakub-wofi \
+  selection=$(echo -e "$options" | omakub-launch-wofi \
     --show dmenu \
     --allow-markup \
     --prompt "$prompt..." \
@@ -57,6 +57,10 @@ open_in_editor() {
 
 install() {
   present_terminal "echo 'Installing $1...'; omakub-app-install $2"
+}
+
+install_font() {
+  present_terminal "echo 'Installing $1...'; omakub-font-install $2 && sleep 2 && omakub-font-set '$3'"
 }
 
 install_terminal() {
@@ -243,9 +247,20 @@ show_install_utility_menu() {
 }
 
 show_install_style_menu() {
-  case $(menu "Install" "󰸌  Theme\n  Background" "--width 250 --height 130") in
+  case $(menu "Install" "󰸌  Theme\n  Background\n  Font" "--width 250 --height 170") in
   *Theme*) present_terminal omakub-theme-install ;;
   *Background*) omakub-theme-bg-install ;;
+  *Font*) present_terminal omakub-font-install ;;
+  *) show_install_menu ;;
+  esac
+}
+
+show_install_font_menu() {
+  case $(menu "Install" "  Cascadia Mono\n  JetBrains Mono\n  iA Fonts\n  Microsoft Core Fonts" "--width 350 --height 210") in
+  *Cascadia*) install_font "Cascadia Mono" "cascadia-mono" "Cascadia Mono Nerd Font" ;;
+  *JetBrains*) install_font "JetBrains Mono" "jetbrains-mono" "JetBrains Mono Nerd Font" ;;
+  *iA*) install_font "iA Fonts" "iafonts" "iA Fonts Nerd Font" ;;
+  *Microsoft*) install_font "Microsoft Core Fonts" "mscore" "Microsoft Core Fonts" ;;
   *) show_install_menu ;;
   esac
 }
@@ -356,15 +371,33 @@ show_install_gaming_menu() {
 }
 
 show_remove_menu() {
-  case $(menu "Remove" "  Package\n  Web App\n  TUI\n󰀻  App\n󰸌  Theme\n󰵮  Development\n󰏓  Preinstalls" "--width 250 --height 320") in
+  case $(menu "Remove" "  Package\n  Web App\n  TUI\n󰀻  App\n  Style\n󰵮  Development\n󰏓  Preinstalls" "--width 250 --height 320") in
   *Package*) present_terminal omakub-pkg-remove ;;
   *Web*) present_terminal omakub-webapp-remove ;;
   *TUI*) present_terminal omakub-tui-remove ;;
   *App*) present_terminal omakub-app-remove ;;
-  *Theme*) present_terminal omakub-theme-remove ;;
+  *Style*) show_remove_style_menu ;;
   *Development*) show_remove_development_menu ;;
   *Preinstalls*) present_terminal omakub-remove-all ;;
   *) show_main_menu ;;
+  esac
+}
+
+show_remove_style_menu() {
+  case $(menu "Remove" "󰸌  Theme\n  Font" "--width 250 --height 130") in
+  *Theme*) present_terminal omakub-theme-remove ;;
+  *Font*) show_remove_font_menu ;;
+  *) show_remove_menu ;;
+  esac
+}
+
+show_remove_font_menu() {
+  case $(menu "Remove Font" "  Cascadia Mono\n  JetBrains Mono\n  iA Fonts\n  Microsoft Core Fonts" "--width 350 --height 210") in
+  *Cascadia*) present_terminal "omakub-remove-font cascadia-mono" ;;
+  *JetBrains*) present_terminal "omakub-remove-font jetbrains-mono" ;;
+  *iA*) present_terminal "omakub-remove-font iafonts" ;;
+  *Microsoft*) present_terminal "omakub-remove-font mscore" ;;
+  *) show_remove_menu ;;
   esac
 }
 

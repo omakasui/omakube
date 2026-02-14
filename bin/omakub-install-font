@@ -1,0 +1,43 @@
+#!/bin/bash
+
+# Install one of the supported fonts. Usually called via Install > Fonts > * in the Omadeb Menu.
+
+if [[ -z "$1" ]]; then
+  echo "Usage: omadeb-install-font <font>" >&2
+  exit 1
+fi
+
+mkdir -p ~/.local/share/fonts
+
+case "$1" in
+jetbrains-mono)
+  echo -e "Installing JetBrains Mono...\n"
+  wget -O jetbrains.zip https://download.jetbrains.com/fonts/JetBrainsMono-2.304.zip
+  unzip jetbrains.zip -d jetbrains
+  cp jetbrains/fonts/ttf/JetBrainsMono-*.ttf ~/.local/share/fonts
+  rm -rf jetbrains.zip jetbrains
+  ;;
+iafonts)
+  wget -O iafonts.zip https://github.com/iaolo/iA-Fonts/archive/refs/heads/master.zip
+  unzip iafonts.zip -d iaFonts
+  cp iaFonts/iA-Fonts-master/iA\ Writer\ Mono/Static/iAWriterMonoS-*.ttf ~/.local/share/fonts
+  rm -rf iafonts.zip iaFonts
+  ;;
+cascadia-mono)
+  cd /tmp
+  wget https://github.com/ryanoasis/nerd-fonts/releases/latest/download/CascadiaMono.zip
+  unzip CascadiaMono.zip -d CascadiaFont
+  cp CascadiaFont/*.ttf ~/.local/share/fonts
+  rm -rf CascadiaMono.zip CascadiaFont
+  ;;
+mscore)
+  echo -e "Installing Microsoft Core Fonts...\n"
+  sudo apt -y install ttf-mscorefonts-installer
+  ;;
+*)
+  echo "Usage: omadeb-install-font <font>" >&2
+  exit 1
+  ;;
+esac
+
+fc-cache

@@ -1,0 +1,35 @@
+#!/bin/bash
+
+# Remove one of the supported fonts. Usually called via Remove > Styles > Fonts > * in the Omadeb Menu.
+
+if [[ -z "$1" ]]; then
+  echo "Usage: omadeb-remove-font <font>" >&2
+  exit 1
+fi
+
+
+case "$1" in
+jetbrains-mono)
+  echo -e "Removing JetBrains Mono...\n"
+  rm -f ~/.local/share/fonts/JetBrainsMono-*.ttf
+  ;;
+iafonts)
+  echo -e "Removing iA Fonts...\n"
+  rm -f ~/.local/share/fonts/iAWriterMonoS-*.ttf
+  ;;
+cascadia-mono)
+  echo -e "Removing Cascadia Mono...\n"
+  rm -f ~/.local/share/fonts/CascadiaMono-*.ttf
+  rm -rf CascadiaMono.zip CascadiaFont
+  ;;
+mscore)
+  echo -e "Removing Microsoft Core Fonts...\n"
+  sudo apt -y remove ttf-mscorefonts-installer
+  ;;
+*)
+  echo "Usage: omadeb-remove-font <font>" >&2
+  exit 1
+  ;;
+esac
+
+fc-cache
